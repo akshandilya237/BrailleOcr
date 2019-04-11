@@ -1,0 +1,51 @@
+<div class="tabs is-toggle is-fullwidth">
+  <ul>
+    <li id="n1" (click)="switch(1)" class="is-active">
+      <a>
+        <span>Select File to convert</span>
+      </a>
+    </li>
+    <li id="n2" (click)="switch(2)">
+      <a>
+        <span>Master Copy</span>
+      </a>
+    </li>
+    <li id="n3" style="display:none;" (click)="switch(3)">
+      <a>
+        <span>Braille</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="columns tabs-content">
+  <div class="column is-half">
+  <div id="file" class="file has-name is-boxed upload-btn">
+    <label class="file-label">
+      <input class="file-input" type="file" #file accept='image/*' (change)="preview(file.files)">
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fa fa-upload"></i>
+        </span>
+        <span class="file-label">
+          Choose a file…
+        </span>
+      </span>
+      <span id="file-name" class="file-name">
+        No File Selected
+      </span>
+    </label>
+  </div>
+  <div id="s1" style="height: 81.5vh; overflow: auto;">
+    <img class="image" [src]="imgURL" *ngIf="imgURL">
+  </div>
+</div>
+  <div id="s2" style="height: 78vh;width:49vw;overflow: auto;    float:left;
+  display:inline-block;" class="tab-content">
+      <a class="button is-link" id="b1" 
+      (click)="generate_master_copy()">Generate Master Copy</a>
+    <iframe #frame id="i1" srcdoc="" style="height:1000px;" frameborder="0"></iframe>
+  </div>
+  <!-- <div id="s3" class="tab-content">
+    <p>Content 3</p>
+  </div> -->
+</div>

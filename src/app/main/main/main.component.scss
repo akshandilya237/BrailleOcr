@@ -1,0 +1,24 @@
+.tab-content {
+    display: block;
+
+    &.is-active {
+      display: block;
+    }
+  }
+
+.upload-btn{
+  top:25vh;
+  left: 18vw;
+  &.is-uploaded {
+    top: 0vh;
+    top: -2vh;
+  }
+}
+.image{
+  margin-left: auto;
+	margin-right: auto;
+}
+
+#b1{
+  top:50%;display: none;
+}

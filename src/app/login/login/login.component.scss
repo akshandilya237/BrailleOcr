@@ -1,0 +1,31 @@
+.container{
+padding-left: 20rem;
+padding-right: 20rem;
+padding-top: 5rem;
+
+    .container--background{
+       background-color: #EFF8FF; 
+       padding-left: 8rem;
+       padding-right: 8rem;
+       padding-top: 3rem; 
+       padding-bottom: 3rem; 
+
+       .dell-logo{
+           height: 3rem;
+           width: 3rem;
+           margin: 0px auto;
+       }
+       .login__title{
+           text-align: center;
+           font-family: 'Roboto,sans-serif';
+           font-size: 2rem;
+           
+       }
+       .login__button{
+        background-color: #ee6411;
+        font-size: .8rem;
+        height: 2.2rem;
+        width: 10.725rem;       
+      }
+    }
+}
