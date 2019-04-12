@@ -1,11 +1,11 @@
-<div class="tabs is-toggle is-fullwidth">
+<div class="tabs is-toggle columns is-gapless">
   <ul>
-    <li id="n1" (click)="switch(1)" class="is-active">
+    <li id="n1" (click)="switch(1)" class="column is-half is-active">
       <a>
         <span>Select File to convert</span>
       </a>
     </li>
-    <li id="n2" (click)="switch(2)">
+    <li id="n2" (click)="switch(2)" class="column is-half">
       <a>
         <span>Master Copy</span>
       </a>
@@ -39,13 +39,18 @@
     <img class="image" [src]="imgURL" *ngIf="imgURL">
   </div>
 </div>
-  <div id="s2" style="height: 78vh;width:49vw;overflow: auto;    float:left;
-  display:inline-block;" class="tab-content">
+<div class="column is-half">
+    <a class="button is-link" id="b2">Generate Braille</a>
+  <div id="s2"  style="height: 81.5vh;">
       <a class="button is-link" id="b1" 
       (click)="generate_master_copy()">Generate Master Copy</a>
-    <iframe #frame id="i1" srcdoc="" style="height:1000px;" frameborder="0"></iframe>
-  </div>
+      <progress id="progress" class="progress is-medium is-link" max="100"></progress>
+      <p id="text">Generating...</p> 
+      <div id="c1" class="container" style="height: 80vh;">
+      <iframe scrolling="yes" #frame id="i1" srcdoc=""></iframe>
+      </div>
   <!-- <div id="s3" class="tab-content">
     <p>Content 3</p>
   </div> -->
+</div>
 </div>

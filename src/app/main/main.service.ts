@@ -5,10 +5,13 @@ import { observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MainService {
-  baseurl = "http://localhost:5000"
+  baseurl = "http://aadf8f13.ngrok.io"
   constructor(public http:HttpClient) { }
 
-  get_master_copy(){
-    return this.http.get(this.baseurl+'/get_master_copy')
+  get_master_copy(files){
+    const formData: FormData = new FormData();
+    formData.append('file', files);
+    console.log(formData)
+    return this.http.post(this.baseurl+'/get_master_copy',formData)
   }
 }

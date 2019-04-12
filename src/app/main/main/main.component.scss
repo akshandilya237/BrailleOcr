@@ -10,7 +10,6 @@
   top:25vh;
   left: 18vw;
   &.is-uploaded {
-    top: 0vh;
     top: -2vh;
   }
 }
@@ -20,5 +19,42 @@
 }
 
 #b1{
-  top:50%;display: none;
+  top:50%;
+  display: none;
+  width:60%;
+  margin: 0 auto;
+}
+
+.progress{
+  display: none;
+  width:60%;
+  margin-top:45% !important;
+  margin: 0 auto;
+}
+
+#text{
+  display: none;
+  text-align: center;
+}
+
+#i1{
+  // border:1px solid lightgrey;
+  display: none;
+  height: 100%;
+  width: 100%;
+  position:absolute;top:0px;left:0px;right:0px;bottom:0px;
+
+}
+
+#b2{
+  top:-2vh;
+  margin: 0 auto;
+  width: 50%;
+  display: none;
+}
+
+.container{
+ display: none;
+ width:628px;
+
 }

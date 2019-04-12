@@ -11,7 +11,8 @@ export class MainComponent implements OnInit {
   public imagePath;
   imgURL: any;
   response: any;
-  public message: string;  
+  public message: string; 
+  files: any; 
   constructor(public service: MainService) { }
 
   ngOnInit() {
@@ -45,6 +46,7 @@ export class MainComponent implements OnInit {
   }
 
   preview(files) {
+    this.files = files[0];
     if (files.length === 0)
       return;
  
@@ -70,15 +72,28 @@ export class MainComponent implements OnInit {
 
   generate_master_copy(){
           console.log("hello")
+    document.getElementById("b1").style.display = "none";
+    document.getElementById("progress").style.display = "block";
+    document.getElementById("text").style.display = "block";
 
-    this.service.get_master_copy().subscribe(resp =>{
+    this.service.get_master_copy(this.files).subscribe(resp =>{
       console.log("hello")
       console.log(resp)
       this.response = resp;
       (document.getElementById('i1') as HTMLIFrameElement).srcdoc = resp['html'];
-      (document.getElementById('i1') as HTMLIFrameElement).width = resp['width'];
+      (document.getElementById('i1') as HTMLIFrameElement).width = resp['width']+'px';
+      console.log((document.getElementById('i1') as HTMLIFrameElement).width)
       // document.getElementById('i1').height = "1000px";
-      alert('Master Copy generated')
+      document.getElementById('i1').innerHTML = resp['html'];
+      document.getElementById('i1').style.width = resp['width'];
+      document.getElementById("progress").style.display = "none";
+      document.getElementById("text").style.display = "none";
+      document.getElementById("b2").style.display = "block";
+      document.getElementById("c1").style.display = "block";
+      document.getElementById("i1").style.display = "block";
+
+
+
 
 
     }  
