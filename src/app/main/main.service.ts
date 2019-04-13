@@ -5,7 +5,8 @@ import { observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MainService {
-  baseurl = "http://localhost:5000"
+  // baseurl = "http://localhost:5000"
+  baseurl = "http://ea1c8f0f.ngrok.io"
   constructor(public http:HttpClient) { }
 
   get_master_copy(files){

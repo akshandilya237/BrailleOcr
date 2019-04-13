@@ -20,12 +20,12 @@
 
 #b1{
   top:50%;
-  display: none;
+  display: block;
   width:60%;
   margin: 0 auto;
 }
 
-.progress{
+#progress{
   display: none;
   width:60%;
   margin-top:45% !important;
@@ -61,4 +61,17 @@
 
 #s3{
   display: none;
+  // transform: translateX(0%)
+}
+
+#progress1{
+  display: none;
+  width:60%;
+  margin-top:45% !important;
+  margin: 0 auto;
+}
+
+#text1{
+  display: none;
+  text-align: center;
 }
