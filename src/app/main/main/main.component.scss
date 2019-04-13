@@ -42,8 +42,7 @@
   display: none;
   height: 100%;
   width: 100%;
-  position:absolute;top:0px;left:0px;right:0px;bottom:0px;
-
+  position:absolute;
 }
 
 #b2{
@@ -55,6 +54,11 @@
 
 .container{
  display: none;
- width:628px;
+ width:stretch;
+ height:stretch;
 
+}
+
+#s3{
+  display: none;
 }

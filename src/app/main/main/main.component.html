@@ -18,7 +18,7 @@
   </ul>
 </div>
 <div class="columns tabs-content">
-  <div class="column is-half">
+  <div class="column  is-half" [@slide]="isRightVisible? 'right' : 'left'">
   <div id="file" class="file has-name is-boxed upload-btn">
     <label class="file-label">
       <input class="file-input" type="file" #file accept='image/*' (change)="preview(file.files)">
@@ -40,17 +40,17 @@
   </div>
 </div>
 <div class="column is-half">
-    <a class="button is-link" id="b2">Generate Braille</a>
-  <div id="s2"  style="height: 81.5vh;">
+    <a class="button is-link" id="b2" (click)="generate_braille()">Generate Braille</a>
+  <div id="s2" [@slide]="isRightVisible? 'right' : 'left'"  style="height: 81.5vh;">
       <a class="button is-link" id="b1" 
       (click)="generate_master_copy()">Generate Master Copy</a>
       <progress id="progress" class="progress is-medium is-link" max="100"></progress>
       <p id="text">Generating...</p> 
-      <div id="c1" class="container" style="height: 80vh;">
-      <iframe scrolling="yes" #frame id="i1" srcdoc=""></iframe>
+      <div id="c1" class="container">
+      <iframe scrolling="yes"  id="i1" srcdoc=""></iframe>
       </div>
-  <!-- <div id="s3" class="tab-content">
+   <div id="s3" class="tab-content">
     <p>Content 3</p>
-  </div> -->
+  </div>
 </div>
 </div>
