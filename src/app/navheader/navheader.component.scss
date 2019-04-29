@@ -1,0 +1,48 @@
+nav {
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    padding-left: 7.38rem;
+    padding-right: 10.38rem;
+  //Defineing the transition property of nav
+    background: #00447C;
+    padding-top: 0.35rem;
+    box-shadow: -1px 1px 13px 0px #333;
+ 
+  
+    .dell-logo {
+      height: 2.5rem;
+      padding-right: 0.75rem;
+      border-right: solid 0.12rem #fff;
+      margin-top: 8px;
+    }
+  
+    .ssp-heading {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+    
+    .ssp-sub-heading{
+        font-size: 0.9rem;
+        transition-property: border;
+        transition-duration: 0.2s;
+    }
+  
+    .ssp-sub-heading:hover{
+      color:#fff !important;
+      border-bottom: #fff solid 3px;
+      background-color: inherit !important;
+    }
+  }
+  
+  
+  .is-transparent{
+    background-color: transparent;  
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    nav{
+      padding-top: 1rem;
+      padding-left: 1rem;
+      padding-right: 0rem;
+    }   
+  }

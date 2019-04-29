@@ -1,6 +1,7 @@
-  <div id="file" class="file has-name is-boxed upload-btn">
+<div id=app1>
+<div id="file" class="file has-name is-boxed upload-btn">
     <label class="file-label">
-      <input class="file-input" type="file" #file accept='image/*' (change)="preview(file.files)">
+      <input class="file-input" type="file"  (change)="preview($event)" multiple>
       <span class="file-cta">
         <span class="file-icon">
           <i class="fa fa-upload"></i>
@@ -13,4 +14,26 @@
         No File Selected
       </span>
     </label>
+  </div>
+  <div class="panes">
+  <div class="pane">
+    <h1 style="font-size: 2rem;">FAST</h1>
+    <div class="sep__desc"></div>
+    <br>
+    <p>Faster Conversion from PDF to Braille</p>
+  </div>
+
+  <div class="pane">
+      <h3 style="font-size: 2rem;">RELIABLE</h3>
+      <div class="sep__desc"></div><br>
+      <p>AI/ML Technology helps in better Reliablity</p>
+    </div>
+
+    <div class="pane">
+        <h3 style="font-size: 2rem;">EFFICIENT</h3>
+        <div class="sep__desc"></div><br>
+        <p>Efficient System</p>
+      </div>
+    
+  </div>
   </div>

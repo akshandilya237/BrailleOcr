@@ -2,7 +2,7 @@
   <ul>
     <li id="n1" (click)="switch(1)" class="column is-half is-active">
       <a>
-        <span id="original">Select File to convert</span>
+        <span id="original">Original</span>
       </a>
     </li>
     <li id="n2" (click)="switch(2)" class="column is-half">
@@ -10,7 +10,7 @@
         <span>Master Copy</span>
       </a>
     </li>
-    <li id="n3" style="display:none;"  class="column is-half" (click)="switch(3)">
+    <li id="n3" style="display:none;" class="column is-half" (click)="switch(3)">
       <a>
         <span>Braille</span>
       </a>
@@ -18,24 +18,45 @@
   </ul>
 </div>
 <div class="columns tabs-content">
-  <div id="tab1" class="column  is-half" [@slide]="isRightVisible? 'right' : 'left'">
-  <div id="s1" style="height: 81.5vh; overflow: auto;">
-    <img class="image" src="../../../assets/text.jpg">
+  <div id="tab1" [@slide1]="isSlide1Visible? 'right' : 'left'" class="column  is-half">
+    <div id="s1">
+      <iframe id="i2" scrolling="yes" [src]="imageURL"></iframe>
+    </div>
   </div>
+  <div id="s2" class="column is-half" [@slide2]="isSlide2Visible? 'right' : 'left'" style="height: 87vh;">
+    <div id="master-copy-form" class="master-copy__form">
+      <span class="master-copy__form__lang">
+        <p class="master-copy__form__lang__text">Select Language : </p>
+        <div class="select">
+          <select id="select_lang">
+            <option value="eng">English</option>
+            <option value="hin">Hindi</option>
+          </select>
+        </div>
+      </span><br>
+      <span class="master-copy__form__checkbox">
+        <label class="checkbox">
+          <span class="master-copy__form__checkbox__text">Display image in Master Copy : </span>
+          <input id="checkbox" class="master-copy__form__checkbox__input" type="checkbox">
+        </label>
+      </span>
+      <a class="button is-link" id="b1" (click)="generate_master_copy()">Generate Master Copy</a>
+    </div>
+    <span style="display: flex;">
+      <a class="button is-link" id="b2" (click)="generate_braille()">Generate Braille</a>
+      <a class="button is-danger" id="b3" (click)="save_master_copy()">Save</a>
+    </span>
+    <progress id="progress" class="progress is-medium is-link" max="100"></progress>
+    <p id="text">Generating...</p>
+    <div id="c1">
+
+    </div>
+  </div>
+  <div id="s3" style="height:92vh" class="column is-half">
+    <a class="button is-danger" id="b4" (click)="print_braille()">Print</a>
+    <progress id="progress1" class="progress is-medium is-link" max="100"></progress>
+    <p id="text1">Generating...</p>
+    <div id="c2">
+    </div>
 </div>
-  <a class="button is-link" id="b2" (click)="generate_braille()">Generate Braille</a>
-  <div id="s2" [@slide]="isRightVisible? 'right' : 'left'" class="column is-half" style="height: 81.5vh;">
-      <a class="button is-link" id="b1" 
-      (click)="generate_master_copy()">Generate Master Copy</a>
-      <progress id="progress" class="progress is-medium is-link" max="100"></progress>
-      <p id="text">Generating...</p> 
-      <div id="c1" class="container">
-      <iframe scrolling="yes"  id="i1" srcdoc=""></iframe>
-      </div>
-      </div>
-      <div id="s3">
-          <progress id="progress1" class="progress is-medium is-link" max="100"></progress>
-          <p id="text1">Generating...</p> 
-          <p>Content 3</p>
-      </div>
 </div>
